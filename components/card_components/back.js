@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
-import React from 'react';
 import style from '../../styles/css/card_components/back.module.css';
-import { Fragment } from "react"
+import Link from 'next/link';
 
 
 export const Back = () => {
@@ -15,8 +14,10 @@ export const Back = () => {
         <div onClick={() => router.back()} >
           <p>&lt; back</p>
         </div>
-        <div onClick={() => router.push('/')} >
-          <p>&lt; home</p>
+        <div>
+          <Link href="/">
+            <p>&lt; Home</p>
+          </Link>
         </div>
       </div>
     </>
