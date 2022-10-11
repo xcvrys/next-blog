@@ -15,7 +15,7 @@ export const Back = () => {
           <p>&lt; back</p>
         </div>
         <div>
-          <Link href="/">
+          <Link href="https://next-blog-xcvrys.vercel.app/">
             <p>&lt; Home</p>
           </Link>
         </div>
