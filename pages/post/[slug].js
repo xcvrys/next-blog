@@ -44,7 +44,6 @@ export const Post = ({ title, body, image, slug, date, likes, author_name, autho
 
 export const getServerSideProps = async pageContext => {
   const pageSlug = pageContext.query.slug;
-  const link = process.env.SANITY_API_TOKEN
 
   if (!pageSlug) {
     return {
@@ -61,7 +60,7 @@ export const getServerSideProps = async pageContext => {
     author->,
     likes
   }`);
-  const url = `${link}${query}`;
+  const url = `https://8vy6b3r4.api.sanity.io/v1/data/query/production?query=${query}`;
 
   const result = await fetch(url).then(res => res.json());
   const post = result.result[0];

@@ -64,7 +64,6 @@ export default function Home({ posts }) {
 }
 
 export async function getServerSideProps() {
-  const link = process.env.SANITY_API_TOKEN
 
   const query = encodeURIComponent(`*[ _type == "post" ]{ 
       title,
@@ -76,7 +75,7 @@ export async function getServerSideProps() {
     }
   `);
 
-  const url = `${link}${query}`;
+  const url = `https://8vy6b3r4.api.sanity.io/v1/data/query/production?query=${query}`;
   const result = await fetch(url).then(res => res.json());
 
   if (!result.result || !result.result.length) {
