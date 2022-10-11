@@ -8,7 +8,7 @@ export const Comments = () => {
       <div className={style.main}>
         <p>Comments</p>
         <div className={style.content}>
-          <p> /* ToDo */</p>
+          <p>ToDo</p>
         </div>
       </div>
     </>

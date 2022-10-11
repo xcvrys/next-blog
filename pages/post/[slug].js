@@ -19,6 +19,8 @@ export const Post = ({ title, body, image, slug, date, author_name, author_slug,
     setImageUrl(imgBuilder.image(image));
   }, [image]);
 
+
+
   console.log(slug);
   return (
     <>

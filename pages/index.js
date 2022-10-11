@@ -76,19 +76,6 @@ export async function getServerSideProps() {
     }
   `);
 
-  // const cat = "Home";
-  // const query = encodeURIComponent(`*[ _type == "post" && "${cat}" in categories[]->title]{ 
-  //   ..., 
-  //   title,
-  //   slug,
-  //   mainImage,
-  //   author->,
-  //   categories[]->,
-  //     ttile,
-  //   }
-  // `);
-
-
   const url = `https://8vy6b3r4.api.sanity.io/v1/data/query/production?query=${query}`;
   const result = await fetch(url).then(res => res.json());
 

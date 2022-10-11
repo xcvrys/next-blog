@@ -9,7 +9,7 @@ export const Landing = () => {
     <>
       <div className={styles.main}>
         <div className={styles.content}>
-          <p>Hi, I'm
+          <p>Hi, I&apos;m
             <span>
               <Link href={'https://youtu.be/d1YBv2mWll0'}>
                 <a target="_blank">XCVRYS</a>

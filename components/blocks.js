@@ -12,8 +12,8 @@ export const Blocks = () => {
           <h4>Lorem ipsum dolor sit amet. Cum animi placeat qui corporis quia sit officia voluptas ex dolorem sequi cum nihil eligendi. Et mollitia alias id dolorem nihil in fugiat dolorum sit cumque consequatur quo dolor quia. </h4>
         </div>
         <div className={styles.content}>
-          <h1>I'M</h1>
-          <h4>There's Nothing here YEET</h4>
+          <h1>I&apos;M</h1>
+          <h4>There&apos;s Nothing here YEET</h4>
         </div>
         <div className={styles.content}>
           <h1>XCVRYS</h1>
