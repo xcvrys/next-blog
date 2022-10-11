@@ -1,5 +1,6 @@
 import style from '../styles/css/404.module.css';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const NotFound = () => {
   const router = useRouter();
