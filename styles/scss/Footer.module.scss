@@ -1,0 +1,29 @@
+@import "./colors";
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 3rem 0;
+  background-color: $secondary-color;
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    font-family: "Bungee Shade", cursive;
+    font-size: 1.5rem;
+    color: $black;
+  }
+  .copyright {
+    color: $primary-color;
+    font-family: "Podkova", serif;
+  }
+}
+
+// F4Jbppj4ZWY7mR8

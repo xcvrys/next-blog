@@ -1,0 +1,65 @@
+@import "./colors";
+
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 90vh;
+  height: auto;
+  margin: 0 2rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: $black;
+
+  .content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+
+    .author {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: $white;
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 80ch;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+    .posts {
+      background-color: $white;
+      border-radius: 1rem;
+      padding: 1rem;
+      margin-bottom: 2rem;
+
+      p {
+        padding: 0.5rem;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .post {
+        cursor: pointer;
+        padding: 0 1rem;
+        border-radius: 0.5rem;
+
+        p {
+          font-size: 1rem;
+          font-weight: normal;
+        }
+
+        &:hover {
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
+}

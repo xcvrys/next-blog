@@ -1,0 +1,65 @@
+.main {
+  padding: 4rem 0;
+}
+.main .feed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.main .feed .post {
+  margin: 1rem;
+  cursor: pointer;
+  background-color: #fdf8f5;
+  border-radius: 0.75rem;
+  position: relative;
+}
+.main .feed .post .category {
+  position: absolute;
+  width: 100%;
+  top: 245px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.main .feed .post .category span {
+  background-color: #266150AB;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.4rem;
+  text-transform: uppercase;
+  margin: 10px 5px;
+  color: #fdf8f5;
+}
+.main .feed .post .mainImage {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+.main .feed .post .details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.main .feed .post .details img {
+  border-radius: 50%;
+  margin-left: 10px;
+}
+.main .feed .post .details .author {
+  margin: 20px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.main .feed .post .details .author h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 14ch;
+  margin: 0;
+}
+.main .feed .post .details .author p {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+/*# sourceMappingURL=Home.module.css.map */

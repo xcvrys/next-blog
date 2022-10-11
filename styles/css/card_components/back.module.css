@@ -1,0 +1,11 @@
+.main {
+  font-family: "Bungee Shade", cursive;
+  font-size: 1.75rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  height: 6rem;
+}
+
+/*# sourceMappingURL=back.module.css.map */

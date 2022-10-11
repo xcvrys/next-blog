@@ -1,0 +1,73 @@
+@import "./colors";
+.main {
+  padding: 4rem 0;
+
+  .feed {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: "Plus Jakarta Sans", sans-serif;
+
+    .post {
+      margin: 1rem;
+      cursor: pointer;
+      background-color: $white;
+      border-radius: 0.75rem;
+      position: relative;
+
+      .category {
+        position: absolute;
+        width: 100%;
+        top: 245px;
+        display: flex;
+        flex-wrap: wrap;
+
+        span {
+          background-color: $green + AB;
+          padding: 0.5rem 0.6rem;
+          border-radius: 0.4rem;
+          text-transform: uppercase;
+          margin: 10px 5px;
+          color: $white;
+        }
+      }
+
+      .mainImage {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+      }
+
+      .details {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        img {
+          border-radius: 50%;
+          margin-left: 10px;
+        }
+
+        .author {
+          margin: 20px;
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+
+          h3 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 14ch;
+            margin: 0;
+          }
+          p {
+            margin: 0;
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+}

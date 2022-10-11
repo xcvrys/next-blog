@@ -1,0 +1,35 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 5rem 0;
+  gap: 3rem;
+  font-family: "Podkova", serif;
+}
+.main .content {
+  width: 17.5rem;
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  text-align: center;
+}
+.main .content h4 {
+  width: 80%;
+  margin: 0px;
+}
+.main .content:nth-child(odd) {
+  background-color: #266150;
+  color: #ddaf94;
+}
+.main .content:nth-child(even) {
+  background-color: #ddaf94;
+  color: #266150;
+}
+
+/*# sourceMappingURL=Blocks.module.css.map */

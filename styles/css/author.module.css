@@ -1,0 +1,58 @@
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 90vh;
+  height: auto;
+  margin: 0 2rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #222222;
+}
+.main .content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.main .content .author {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fdf8f5;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 80ch;
+}
+.main .content .author img {
+  border-radius: 50%;
+}
+.main .content .posts {
+  background-color: #fdf8f5;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.main .content .posts p {
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.main .content .posts .post {
+  cursor: pointer;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+}
+.main .content .posts .post p {
+  font-size: 1rem;
+  font-weight: normal;
+}
+.main .content .posts .post:hover {
+  background-color: #e8cebf;
+}
+
+/*# sourceMappingURL=author.module.css.map */
