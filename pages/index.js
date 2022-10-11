@@ -6,7 +6,6 @@ import { Quotes } from '../components/quotes';
 import imageUrlBuilder from '@sanity/image-url';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Head from "next/head"
 
 export default function Home({ posts }) {
   const router = useRouter();
@@ -35,33 +34,31 @@ export default function Home({ posts }) {
 
   return (
     <>
-      <Head>
-        <Landing />
-        <Blocks />
-        <Quotes />
-        <div className={styles.main}>
-          <div className={styles.feed}>
-            {mappedPosts.length ? mappedPosts.map((p, index) => (
-              <div onClick={() => router.push(`/post/${p.slug.current}`)} key={index} className={styles.post}>
-                <div className={styles.category}>
-                  {p.categories ? p.categories.map((c, index) => (
-                    <span key={index}>#{c.title}</span>
-                  )) : null}
-                </div>
-                <img className={styles.mainImage} src={p.mainImage} />
-                <div className={styles.details}>
-                  <img src={p.avatar} />
-                  <div className={styles.author}>
-                    <h3>{p.title}</h3>
-                    <p>{p.author.name}</p>
-                  </div>
+      <Landing />
+      <Blocks />
+      <Quotes />
+      <div className={styles.main}>
+        <div className={styles.feed}>
+          {mappedPosts.length ? mappedPosts.map((p, index) => (
+            <div onClick={() => router.push(`/post/${p.slug.current}`)} key={index} className={styles.post}>
+              <div className={styles.category}>
+                {p.categories ? p.categories.map((c, index) => (
+                  <span key={index}>#{c.title}</span>
+                )) : null}
+              </div>
+              <img className={styles.mainImage} src={p.mainImage} />
+              <div className={styles.details}>
+                <img src={p.avatar} />
+                <div className={styles.author}>
+                  <h3>{p.title}</h3>
+                  <p>{p.author.name}</p>
                 </div>
               </div>
-            )) : <>No Posts Yet</>}
-          </div>
+            </div>
+          )) : <>No Posts Yet</>}
         </div>
-        <Footer />
-      </Head>
+      </div>
+      <Footer />
     </>
   );
 }
