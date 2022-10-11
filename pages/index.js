@@ -7,10 +7,9 @@ import imageUrlBuilder from '@sanity/image-url';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-export default function Home({ posts, categories }) {
+export default function Home({ posts }) {
   const router = useRouter();
   const [mappedPosts, setMappedPosts] = useState([]);
-  const [mappedCat, setMappedCat] = useState([]);
 
   useEffect(() => {
     if (posts.length) {
@@ -64,10 +63,11 @@ export default function Home({ posts, categories }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
+  const link = process.env.SANITY_API_TOKEN
 
   const query = encodeURIComponent(`*[ _type == "post" ]{ 
-    title,
+      title,
     slug,
     mainImage,
     author->,
@@ -76,7 +76,7 @@ export async function getServerSideProps() {
     }
   `);
 
-  const url = `https://8vy6b3r4.api.sanity.io/v1/data/query/production?query=${query}`;
+  const url = `${link}${query}`;
   const result = await fetch(url).then(res => res.json());
 
   if (!result.result || !result.result.length) {
@@ -93,5 +93,3 @@ export async function getServerSideProps() {
     }
   }
 };
-
-

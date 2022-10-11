@@ -5,7 +5,7 @@ import BlockContent from '@sanity/block-content-to-react';
 import { AuthorCard } from '../../components/authorCard';
 import { Likes } from '../../components/card_components/likes';
 
-export const Post = ({ title, body, image, slug, date, author_name, author_slug, author_image, author_bio }) => {
+export const Post = ({ title, body, image, slug, date, likes, author_name, author_slug, author_image, author_bio }) => {
   const [imageUrl, setImageUrl] = useState('');
   const publishDate = date.slice(0, 10);
 
@@ -32,7 +32,7 @@ export const Post = ({ title, body, image, slug, date, author_name, author_slug,
             <BlockContent blocks={body} />
             <div className={styles.date}>
               <p>{publishDate}</p>
-              <Likes postSlug={slug} />
+              <Likes likes={likes} />
             </div>
           </div>
         </div>
@@ -44,6 +44,7 @@ export const Post = ({ title, body, image, slug, date, author_name, author_slug,
 
 export const getServerSideProps = async pageContext => {
   const pageSlug = pageContext.query.slug;
+  const link = process.env.SANITY_API_TOKEN
 
   if (!pageSlug) {
     return {
@@ -60,7 +61,7 @@ export const getServerSideProps = async pageContext => {
     author->,
     likes
   }`);
-  const url = `https://8vy6b3r4.api.sanity.io/v1/data/query/production?query=${query}`;
+  const url = `${link}${query}`;
 
   const result = await fetch(url).then(res => res.json());
   const post = result.result[0];
@@ -77,6 +78,7 @@ export const getServerSideProps = async pageContext => {
         image: post.mainImage,
         date: post.publishedAt,
         slug: post.slug.current,
+        likes: post.likes,
         author_name: post.author.name,
         author_bio: post.author.bio,
         author_image: post.author.image,

@@ -20,6 +20,7 @@ export const Post = ({ name, image, bio, posts }) => {
     setImageUrl(imgBuilder.image(image).width(250).height(250));
   }, [image]);
 
+
   return (
     <>
       <div className={style.main}>
@@ -51,6 +52,7 @@ export const Post = ({ name, image, bio, posts }) => {
 
 export const getServerSideProps = async pageContext => {
   const pageSlug = pageContext.query.slug;
+  const link = process.env.SANITY_API_TOKEN
 
   if (!pageSlug) {
     return {
@@ -70,7 +72,7 @@ export const getServerSideProps = async pageContext => {
     }
       `);
 
-  const url = `https://8vy6b3r4.api.sanity.io/v1/data/query/production?query=${query}`;
+  const url = `${link}${query}`;
 
   const result = await fetch(url).then(res => res.json());
   const post = result.result[0];
