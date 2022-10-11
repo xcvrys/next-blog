@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 import style from '../../styles/css/card_components/back.module.css';
+import { Fragment } from "react"
 
 
 export const Back = () => {
