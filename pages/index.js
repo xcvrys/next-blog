@@ -66,7 +66,7 @@ export default function Home({ posts }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const link = process.env.SANITY_API_TOKEN
 
   const query = encodeURIComponent(`*[ _type == "post" ]{ 
