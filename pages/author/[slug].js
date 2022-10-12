@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import BlockContent from '@sanity/block-content-to-react';
 import style from '../../styles/css/author.module.css';
 import { Back } from '../../components/card_components/back';
-import { Footer } from '../../components/footer';
 import { useRouter } from 'next/router';
 
 
@@ -45,7 +44,6 @@ export const Post = ({ name, image, bio, posts }) => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

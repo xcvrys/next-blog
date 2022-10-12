@@ -1,11 +1,11 @@
 import styles from '../styles/css/Home.module.css'
 import { Landing } from '../components/landing';
 import { Blocks } from '../components/blocks';
-import { Footer } from '../components/footer';
 import { Quotes } from '../components/quotes';
 import imageUrlBuilder from '@sanity/image-url';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+
 
 export default function Home({ posts }) {
   const router = useRouter();
@@ -38,7 +38,7 @@ export default function Home({ posts }) {
       <Blocks />
       <Quotes />
       <div className={styles.main}>
-        <div className={styles.feed}>
+        <section className={styles.feed} id='section' >
           {mappedPosts.length ? mappedPosts.map((p, index) => (
             <div onClick={() => router.push(`/post/${p.slug.current}`)} key={index} className={styles.post}>
               <div className={styles.category}>
@@ -56,9 +56,9 @@ export default function Home({ posts }) {
               </div>
             </div>
           )) : <>No Posts Yet</>}
-        </div>
+        </section>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

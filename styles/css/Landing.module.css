@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 80vh;
+  height: 75vh;
   font-family: "Bungee Shade", cursive;
   padding: 2rem;
 }
@@ -13,6 +13,7 @@
 }
 .main .content span {
   position: relative;
+  margin-left: 1rem;
 }
 .main .content span::after {
   position: absolute;
