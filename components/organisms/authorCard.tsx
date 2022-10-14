@@ -8,7 +8,7 @@ import styled from 'styled-components'
 
 const Main = styled.div`
   margin: 2rem;
-  max-width: 30rem;
+  max-width: 40rem;
   min-width: 20rem;
 `;
 
@@ -48,7 +48,7 @@ export const AuthorCard = ({ author_name, author_slug, author_image, author_bio 
     <>
       <Main>
         <Back />
-        <Author onClick={() => router.push(`/author/${author_slug.current}`)}>
+        <Author onClick={() => router.push(`/author/${author_slug}`)}>
           <AuthorPictureSmall image={author_image} />
           <Details>
             <Name>{author_name}</Name>

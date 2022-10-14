@@ -4,6 +4,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 [**DEPLOYMENT**](https://next-blog-xcvrys.vercel.app/)
 
+[Sanity Data Set](https://xcvrys-blog.sanity.studio/desk)
+
 First, run the development server:
 
 ```bash

@@ -1,7 +1,11 @@
 import BlockContent from '@sanity/block-content-to-react';
 import { Back } from '../../components/atoms/card_components/back';
-import styled from 'styled-components'
 import { AuthorPictureBig } from '../../components/atoms/authorPicture';
+import { authorSlugQuerry } from '../api/querries';
+import { request, gql } from 'graphql-request';
+import { Key } from 'react';
+import styled from 'styled-components'
+import Link from 'next/link';
 
 
 const Main = styled.div`
@@ -53,7 +57,7 @@ const PostsList = styled.div`
   }
 `;
 
-const Posts = styled.div`
+const Posta = styled.div`
   cursor: pointer;
   padding: 0.25rem 1rem;
   border-radius: 0.5rem;
@@ -68,7 +72,7 @@ const Posts = styled.div`
   }
 `;
 
-export const Post = ({ name, image, bioRaw }) => {
+export const Post = ({ name, image, bioRaw, posts }) => {
 
   return (
     <>
@@ -83,9 +87,19 @@ export const Post = ({ name, image, bioRaw }) => {
             <Back />
             <PostsList>
               <p>{name} posts:</p>
-              <Posts>
-                PLACEHOLDER
-              </Posts>
+              <Posta>
+
+
+                {posts.length ? posts.map((post: { slug: Key; title: string }) => (
+                  <div key={post.slug}>
+                    <Link href={`/post/${post.slug}`}>
+                      <p>{post.title}</p>
+                    </Link>
+                  </div>
+                )) : <p>There are no posts yet</p>}
+
+
+              </Posta>
             </PostsList>
           </div>
         </Content>
@@ -97,31 +111,21 @@ export const Post = ({ name, image, bioRaw }) => {
 export default Post;
 
 
-
-
-import { request } from 'graphql-request';
-import { gql } from 'graphql-request';
-
-export const getStaticPaths = async () => { //LINK
-  const query = gql`
-    {
-      allAuthor {
-        slug {
-          current
-        }
-      }
-    }`;
-
+export const getStaticPaths = async () => {
+  ////////////////////     GET LINK     ////////////////////
+  const query = authorSlugQuerry
   const { allAuthor } = await request('https://8vy6b3r4.api.sanity.io/v1/graphql/production/default', query);
-  const paths = allAuthor.map((author) => ({
+
+  const paths = allAuthor.map((author: { slug: { current: string; }; }) => ({
     params: { slug: author.slug.current },
   }));
 
-  return { paths, fallback: true };
+  return { paths, fallback: false };
 };
 
-export const getStaticProps = async ({ params }) => { //AUTHOR CONTENT
-  const query = gql`
+export const getStaticProps = async ({ params }) => {
+  ////////////////////     GET AUTHOR     ////////////////////
+  const authorQuery = gql`
     {
       allAuthor(where: { slug: { current: { eq: "${params.slug}" } } }) {
         name
@@ -137,14 +141,33 @@ export const getStaticProps = async ({ params }) => { //AUTHOR CONTENT
       }
     }`;
 
-  const { allAuthor } = await request('https://8vy6b3r4.api.sanity.io/v1/graphql/production/default', query);
+  const { allAuthor } = await request('https://8vy6b3r4.api.sanity.io/v1/graphql/production/default', authorQuery);
   const author = allAuthor[0];
+
+
+  ////////////////////     GET POSTS     ////////////////////
+  const postsQuery = gql`
+    {
+      allPost(where: { author: { slug: { current: { eq: "${params.slug}" } } } }) {
+        title
+        slug {
+          current
+        }
+      }
+   }`;
+
+  const { allPost } = await request('https://8vy6b3r4.api.sanity.io/v1/graphql/production/default', postsQuery);
+  const posts = allPost.map((post: { title: string; slug: { current: string; }; }) => ({
+    title: post.title,
+    slug: post.slug.current,
+  }));
 
   return {
     props: {
       name: author.name,
       image: author.image.asset.url,
       bioRaw: author.bioRaw,
+      posts,
     },
   };
 }

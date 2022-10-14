@@ -1,5 +1,15 @@
 import { gql } from 'graphql-request';
 
+export const postSlugQuerry = gql`
+  {
+  	allPost{
+      slug{
+        current
+      }
+    }
+  }
+`;
+
 export const indexQuerry = gql`
   {
   	allPost{
@@ -24,4 +34,15 @@ export const indexQuerry = gql`
         title
       }
     }
-  }`;
+  }
+`;
+
+export const authorSlugQuerry = gql`
+  {
+    allAuthor {
+      slug {
+        current
+      }
+    }
+  }
+`; 

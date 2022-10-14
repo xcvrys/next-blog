@@ -3,7 +3,7 @@ import { Blocks } from '../components/molecules/blocks';
 import { Quotes } from '../components/molecules/quotes';
 import PostsList from '../components/organisms/postsList';
 import React from 'react';
-import { indexQuerry } from './api/indexQuerry';
+import { indexQuerry } from './api/querries';
 
 export default function Home({ posts }) {
 
