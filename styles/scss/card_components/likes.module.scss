@@ -1,9 +1,11 @@
 @import "../colors";
 
-.likes {
+.like {
   display: flex;
   justify-content: center;
+  flex-direction: row;
   align-items: center;
   gap: 0.5rem;
   color: $red;
+  width: auto;
 }

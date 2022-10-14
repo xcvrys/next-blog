@@ -1,1 +1,0 @@
-{"version":3,"sourceRoot":"","sources":["../scss/AuthorCard.module.scss","../scss/_colors.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EACA;;AAEA;EACE;EACA,kBCLI;EDMJ;EACA;EACA;EACA;EACA;EACA;EACA,OCdI;EDeJ;EACA;;AAEA;EACE;EACA;EACA;EACA;EACA;;AAGF;EACE;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;;;AAMR;EACE;IACE;IACA","file":"AuthorCard.module.css"}

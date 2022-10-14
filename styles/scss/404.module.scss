@@ -9,16 +9,4 @@
   height: 100vh;
   padding: 3rem 0;
   color: $black;
-
-  p {
-    cursor: pointer;
-    padding: 1rem;
-    border: $black 2px solid;
-    border-radius: 1rem;
-    font-weight: bold;
-
-    &:hover {
-      scale: 1.1;
-    }
-  }
 }
