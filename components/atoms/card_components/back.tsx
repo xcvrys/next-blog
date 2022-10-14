@@ -1,15 +1,15 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 import styled from 'styled-components'
+import { BungeeFont } from '../bungeeFont';
 
 const Main = styled.div`
-  font-family: "Bungee Shade", cursive;
-  font-size: 1.75rem;
-  cursor: pointer;
   display: flex;
-  flex-direction: row;
   gap: 2rem;
-  height: 6rem;
+`;
+
+const Cursor = styled.div`
+  cursor: pointer;
 `;
 
 export const Back = () => {
@@ -18,12 +18,12 @@ export const Back = () => {
   return (
     <>
       <Main>
-        <div onClick={() => router.back()} >
-          <p>&lt; back</p>
-        </div>
-        <div onClick={() => router.push('/')} >
-          <p>&lt; home</p>
-        </div>
+        <Cursor onClick={() => router.back()} >
+          <BungeeFont content="&lt; back" />
+        </Cursor>
+        <Cursor onClick={() => router.push('/')} >
+          <BungeeFont content="&lt; home" />
+        </Cursor>
       </Main>
     </>
   );

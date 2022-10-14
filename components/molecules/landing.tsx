@@ -6,37 +6,39 @@ const Main = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 100%;
   height: 75vh;
   font-family: "Bungee Shade", cursive;
   padding: 2rem;
 `;
 
-const Content = styled.div`
-  text-align: center;
-  font-size: 3rem;
-    span {
-      position: relative;
-      margin-left: 1rem;
-    }
+
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
 `;
 
+import { BungeeFontLanding } from '../atoms/bungeeFont';
 
 export const Landing = () => {
 
   return (
     <>
       <Main>
-        <Content>
-          <p>Hi, I&apos;m
-            <span>
-              <Link href={'https://youtu.be/d1YBv2mWll0'}>
-                <a target="_blank">XCVRYS</a>
-              </Link>
-            </span>
-          </p>
-          <p>Welcome to some random blog</p>
-        </Content>
+
+        <Wrap>
+          <BungeeFontLanding content="Hi, I&apos;m" />
+          <Link href={'https://youtu.be/d1YBv2mWll0'}>
+            <a target="_blank">
+              <BungeeFontLanding content="xcvrys" />
+            </a>
+          </Link>
+        </Wrap>
+        <BungeeFontLanding content="Welcome to some random blog" />
+
       </Main>
     </>
   );

@@ -3,8 +3,6 @@ import styled from 'styled-components'
 
 const Main = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   padding: 5rem 0;
   flex-direction: column;
@@ -15,23 +13,18 @@ const Main = styled.div`
 
   p {
     font-size: 1.5rem;
-    line-height: 2rem;
     padding: 0 3rem;
-
-    &:first-of-type {
-      font-family: "Bungee Shade", cursive;
-      font-size: 2rem;
-    }
   }
   `;
 
+import { BungeeFontQuotes } from '../atoms/bungeeFont';
 
 export const Quotes = () => {
 
   return (
     <>
       <Main>
-        <p>REMEMBER</p>
+        <BungeeFontQuotes content="Remember" />
         <p>If you think you are too small to make a difference, try sleeping with a mosquito.</p>
         <p> -Dalai Lama</p>
       </Main>

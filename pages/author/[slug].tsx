@@ -1,6 +1,7 @@
 import BlockContent from '@sanity/block-content-to-react';
 import { Back } from '../../components/atoms/card_components/back';
 import styled from 'styled-components'
+import { AuthorPictureBig } from '../../components/atoms/authorPicture';
 
 
 const Main = styled.div`
@@ -37,7 +38,6 @@ const Author = styled.div`
   
   img {
     border-radius: 50%;
-    width: 300px;
   }
 `;
 const PostsList = styled.div`
@@ -68,7 +68,6 @@ const Posts = styled.div`
   }
 `;
 
-
 export const Post = ({ name, image, bioRaw }) => {
 
   return (
@@ -76,7 +75,7 @@ export const Post = ({ name, image, bioRaw }) => {
       <Main>
         <Content>
           <Author>
-            {image && <img src={image} alt="Author Image" />}
+            <AuthorPictureBig image={image} />
             <h1>{name}</h1>
             <BlockContent blocks={bioRaw} />
           </Author>

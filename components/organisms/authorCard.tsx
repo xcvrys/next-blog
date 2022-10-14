@@ -15,32 +15,17 @@ const Main = styled.div`
 const Author = styled.div`
   cursor: pointer;
   background-color: #fdf8f5;
-  max-width: 100vw;
   border-radius: 1rem;
   display: flex;
-  flex-direction: row;
   padding: 1rem;
-  margin-top: 2rem;
-  color: #222;
-  align-items: flex-start;
-  font-family: "Plus Jakarta Sans", sans-serif;
-`;
-
-const Image = styled.div`
-  margin-top: 20px;
-  border-radius: 50%;
-  width: auto;
-  height: 100%;
-  object-fit: cover;
-
   img {
     border-radius: 50%;
-    width: 75px;
   }
 `;
 
 const Details = styled.div`
   display: flex;
+  width: 85%;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
@@ -54,6 +39,7 @@ const Name = styled.div`
   margin: 8px 0px;
 `;
 
+import { AuthorPictureSmall } from '../atoms/authorPicture';
 export const AuthorCard = ({ author_name, author_slug, author_image, author_bio }) => {
 
   const router = useRouter();
@@ -63,9 +49,7 @@ export const AuthorCard = ({ author_name, author_slug, author_image, author_bio 
       <Main>
         <Back />
         <Author onClick={() => router.push(`/author/${author_slug.current}`)}>
-          <Image>
-            {author_image && <img src={author_image} alt="Author Image" />}
-          </Image>
+          <AuthorPictureSmall image={author_image} />
           <Details>
             <Name>{author_name}</Name>
             <BlockContent blocks={author_bio} />

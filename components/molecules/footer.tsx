@@ -3,8 +3,6 @@ import styled from 'styled-components'
 
 const Main = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -16,10 +14,7 @@ const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   gap: 3rem;
-  font-family: "Bungee Shade", cursive;
-  font-size: 1.5rem;
 `;
 
 const Copyright = styled.div`

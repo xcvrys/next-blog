@@ -23,6 +23,7 @@ const Content = styled.div`
   align-items: center;
   border-radius: 1rem;
   text-align: center;
+  margin: 0.75rem;
   
   h4 {
     width: 80%;

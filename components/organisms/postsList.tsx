@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 import styled from 'styled-components'
+import { AuthorPictureExtraSmall } from '../atoms/authorPicture';
 
 const Main = styled.div`
   padding: 4rem 0;
@@ -46,12 +47,13 @@ const MainImage = styled.img`
 
 const Details = styled.div` 
   display: flex;
+  width: 290px;
   flex-direction: row;
   align-items: center;
-  img {
+  margin-left: 10px;
+
+  img  {
     border-radius: 50%;
-    margin-left: 10px;
-    width: 50px;
   }
 `;
 
@@ -73,6 +75,7 @@ const Author = styled.div`
   }
 `;
 
+
 export default function PostsList({ posts }) {
   const router = useRouter();
 
@@ -89,7 +92,7 @@ export default function PostsList({ posts }) {
               </Category>
               <MainImage src={p.mainImage.asset.url} alt="Post Image" />
               <Details>
-                <img src={p.author.image.asset.url} alt="Author Image" />
+                <AuthorPictureExtraSmall image={p.author.image.asset.url} />
                 <Author>
                   <h3>{p.title}</h3>
                   <p>{p.author.name}</p>
