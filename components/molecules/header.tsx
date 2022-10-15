@@ -4,7 +4,7 @@ import { BungeeFont } from '../atoms/bungeeFont';
 
 const Head = styled.div`
   background-color: ${({ theme }) => theme.colors.secondary};
-  width: 100vw;
+  width: 100%;
   height: 11vh;
   display: flex;
   align-items: center;
