@@ -11,13 +11,13 @@ const Feed = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Plus Jakarta Sans";
 `;
 
 const Post = styled.div`
   margin: 1rem;
   cursor: pointer;
-  background-color: #fdf8f5;
+  background-color: ${({ theme }) => theme.colors.list};
   border-radius: 0.75rem;
   position: relative;
 `;
@@ -29,12 +29,12 @@ const Category = styled.div`
   flex-wrap: wrap;
 
   span {
-    background-color: #266150AB;
+    background-color: ${({ theme }) => theme.colors.category};
     padding: 0.5rem 0.6rem;
     border-radius: 0.4rem;
     text-transform: uppercase;
     margin: 10px 5px;
-    color: #fdf8f5;
+    color: ${({ theme }) => theme.colors.categoryText};
   }
 `;
 
@@ -62,6 +62,7 @@ const Author = styled.div`
   width: 100%;
   height: auto;
   object-fit: cover;
+  color: ${({ theme }) => theme.colors.secondaryText};
   h3 {
     white-space: nowrap;
     overflow: hidden;
@@ -74,7 +75,6 @@ const Author = styled.div`
     font-size: 0.75rem;
   }
 `;
-
 
 export default function PostsList({ posts }) {
   const router = useRouter();

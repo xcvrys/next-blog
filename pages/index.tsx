@@ -17,7 +17,6 @@ export default function Home({ posts }) {
   );
 }
 
-
 export async function getStaticProps() {
 
   const post = await request('https://8vy6b3r4.api.sanity.io/v1/graphql/production/default', indexQuerry)
@@ -36,7 +35,4 @@ export async function getStaticProps() {
   };
 }
 
-//////////////////////////////////////////////////////       FOR
-import { createClient } from "next-sanity";         //       GQL       //This import for educational purposes only
-import { request, gql } from 'graphql-request';     //     SANITY
-//////////////////////////////////////////////////////    REQUEST
+import { request } from 'graphql-request';

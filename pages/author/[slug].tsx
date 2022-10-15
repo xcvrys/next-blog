@@ -7,7 +7,6 @@ import { Key } from 'react';
 import styled from 'styled-components'
 import Link from 'next/link';
 
-
 const Main = styled.div`
   display: flex;
   align-items: center;
@@ -17,7 +16,7 @@ const Main = styled.div`
   height: auto;
   margin: 0 2rem;
   font-family: "Plus Jakarta Sans", sans-serif;
-  color: #222;
+  color: ${({ theme }) => theme.colors.secondaryText};
 `;
 
 const Content = styled.div`
@@ -35,7 +34,7 @@ const Author = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fdf8f5;
+  background-color: ${({ theme }) => theme.colors.blogAuthor};
   padding: 2rem;
   border-radius: 1rem;
   max-width: 80ch;
@@ -45,7 +44,7 @@ const Author = styled.div`
   }
 `;
 const PostsList = styled.div`
-  background-color: #fdf8f5;
+  background-color: ${({ theme }) => theme.colors.secondary};
   border-radius: 1rem;
   padding: 1rem;
   margin-bottom: 2rem;
@@ -57,7 +56,7 @@ const PostsList = styled.div`
   }
 `;
 
-const Posta = styled.div`
+const SinglePost = styled.div`
   cursor: pointer;
   padding: 0.25rem 1rem;
   border-radius: 0.5rem;
@@ -68,7 +67,7 @@ const Posta = styled.div`
   }
 
   &:hover {
-    background-color: #e8cebf;
+  background-color: ${({ theme }) => theme.colors.primary};
   }
 `;
 
@@ -87,19 +86,13 @@ export const Post = ({ name, image, bioRaw, posts }) => {
             <Back />
             <PostsList>
               <p>{name} posts:</p>
-              <Posta>
-
-
-                {posts.length ? posts.map((post: { slug: Key; title: string }) => (
-                  <div key={post.slug}>
-                    <Link href={`/post/${post.slug}`}>
-                      <p>{post.title}</p>
-                    </Link>
-                  </div>
-                )) : <p>There are no posts yet</p>}
-
-
-              </Posta>
+              {posts.length ? posts.map((post: { slug: Key; title: string }) => (
+                <SinglePost key={post.slug}>
+                  <Link href={`/post/${post.slug}`}>
+                    <p>{post.title}</p>
+                  </Link>
+                </SinglePost>
+              )) : <p>There are no posts yet</p>}
             </PostsList>
           </div>
         </Content>
@@ -109,7 +102,6 @@ export const Post = ({ name, image, bioRaw, posts }) => {
 }
 
 export default Post;
-
 
 export const getStaticPaths = async () => {
   ////////////////////     GET LINK     ////////////////////

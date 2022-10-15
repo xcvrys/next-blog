@@ -5,7 +5,6 @@ import { Back } from '../atoms/card_components/back';
 import { Add } from '../atoms/card_components/add';
 import styled from 'styled-components'
 
-
 const Main = styled.div`
   margin: 2rem;
   max-width: 40rem;
@@ -14,7 +13,7 @@ const Main = styled.div`
 
 const Author = styled.div`
   cursor: pointer;
-  background-color: #fdf8f5;
+  background-color: ${({ theme }) => theme.colors.blogAuthor};
   border-radius: 1rem;
   display: flex;
   padding: 1rem;
@@ -41,7 +40,6 @@ const Name = styled.div`
 
 import { AuthorPictureSmall } from '../atoms/authorPicture';
 export const AuthorCard = ({ author_name, author_slug, author_image, author_bio }) => {
-
   const router = useRouter();
 
   return (

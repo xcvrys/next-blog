@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import { BungeeFontQuotes } from '../atoms/bungeeFont';
 
 const Main = styled.div`
   display: flex;
@@ -8,16 +9,16 @@ const Main = styled.div`
   flex-direction: column;
   font-family: "Podkova", serif;
   text-align: center;
-  border-top: #222 2px solid;
-  border-bottom: #222 2px solid;
+  border-top: ${({ theme }) => theme.colors.primaryText} 2px solid;
+  border-bottom: ${({ theme }) => theme.colors.primaryText} 2px solid;
+  color: ${({ theme }) => theme.colors.primaryText};
 
   p {
     font-size: 1.5rem;
     padding: 0 3rem;
   }
-  `;
+`;
 
-import { BungeeFontQuotes } from '../atoms/bungeeFont';
 
 export const Quotes = () => {
 

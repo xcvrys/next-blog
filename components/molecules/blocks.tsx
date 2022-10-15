@@ -31,12 +31,12 @@ const Content = styled.div`
   }
 
   &:nth-child(odd) {
-    background-color: #266150;
-    color: #ddaf94;
+    background-color: ${({ theme }) => theme.colors.blocksOdd};
+    color: ${({ theme }) => theme.colors.blocksEven};
   }
   &:nth-child(even) {
-    background-color: #ddaf94;
-    color: #266150;
+    background-color: ${({ theme }) => theme.colors.blocksEven};
+    color: ${({ theme }) => theme.colors.blocksOdd};
   }
 `;
 

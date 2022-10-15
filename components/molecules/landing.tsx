@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components'
+import { BungeeFontLanding } from '../atoms/bungeeFont';
 
 const Main = styled.div`
   display: flex;
@@ -9,10 +10,10 @@ const Main = styled.div`
   flex-direction: column;
   width: 100%;
   height: 75vh;
-  font-family: "Bungee Shade", cursive;
+  font-family: "Bungee Shade";
   padding: 2rem;
+  color: ${({ theme }) => theme.colors.primaryText};
 `;
-
 
 const Wrap = styled.div`
   display: flex;
@@ -21,14 +22,11 @@ const Wrap = styled.div`
   gap: 1rem;
 `;
 
-import { BungeeFontLanding } from '../atoms/bungeeFont';
-
 export const Landing = () => {
 
   return (
     <>
       <Main>
-
         <Wrap>
           <BungeeFontLanding content="Hi, I&apos;m" />
           <Link href={'https://youtu.be/d1YBv2mWll0'}>
@@ -38,7 +36,6 @@ export const Landing = () => {
           </Link>
         </Wrap>
         <BungeeFontLanding content="Welcome to some random blog" />
-
       </Main>
     </>
   );

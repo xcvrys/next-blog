@@ -5,14 +5,13 @@ import styled from 'styled-components'
 const BackButton = styled.div`
   cursor: pointer;
   padding: 1rem;
-  border: #222 2px solid;
+  border: ${({ theme }) => theme.colors.primaryText} 2px solid;
   border-radius: 1rem;
   font-weight: bold;
   font-size: 1.5rem;
   background-color: inherit;
-  color: #222;
+  color: ${({ theme }) => theme.colors.primaryText};
   transition: all 0.3s ease-in-out;
-    border: 2px solid #222;
   &:hover {
     scale:1.1;
   }
@@ -27,7 +26,7 @@ const Main = styled.div`
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  color: #222;
+  color: ${({ theme }) => theme.colors.primaryText};
 `;
 
 const NotFound = () => {

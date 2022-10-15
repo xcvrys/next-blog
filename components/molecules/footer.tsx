@@ -7,7 +7,8 @@ const Main = styled.div`
   align-items: center;
   width: 100%;
   padding: 3rem 0;
-  background-color: #ddaf94;
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.primaryText};
 `;
 
 const Content = styled.div`
@@ -18,15 +19,12 @@ const Content = styled.div`
 `;
 
 const Copyright = styled.div`
-  color: #e8cebf;
   font-family: "Podkova", serif;
 `;
 
 export const Footer = () => {
-
   const date = new Date();
   const year = date.getFullYear();
-
 
   return (
     <>

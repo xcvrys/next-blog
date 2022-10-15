@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BungeeFont } from '../atoms/bungeeFont';
+import { BungeeFont } from './bungeeFont';
 export const FooterContent = ({ link, content }) => {
 
   return (
