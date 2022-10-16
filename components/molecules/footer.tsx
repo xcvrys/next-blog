@@ -32,7 +32,7 @@ export const Footer = () => {
         <Content>
           <FooterContent link={'https://twitter.com/xcvrys'} content={'Twitter'} />
           <FooterContent link={'https://github.com/xcvrys'} content={'Github'} />
-          <FooterContent link={'https://www.linkedin.com/in/kamil-r-486147253/'} content={'LinkedIn'} />
+          <FooterContent link={'https://www.linkedin.com/in/xcvrys'} content={'LinkedIn'} />
           <FooterContent link={'https://www.instagram.com/xcvrys_/'} content={'Instagram'} />
         </Content>
         <Copyright>
